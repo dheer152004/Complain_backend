@@ -10,12 +10,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import complain_system.project.dto.AuthResponse;
-import complain_system.project.dto.RegisterRequest;
-import complain_system.project.dto.LoginRequest;
-import complain_system.project.dto.LogoutResponse;
-import complain_system.project.dto.RoleRequest;
-import complain_system.project.dto.RoleResponse;
+import complain_system.project.auth.dto.AuthResponse;
+import complain_system.project.auth.dto.RegisterRequest;
+import complain_system.project.auth.dto.LoginRequest;
+import complain_system.project.auth.dto.LogoutResponse;
+import complain_system.project.role.dto.RoleRequest;
+import complain_system.project.role.dto.RoleResponse;
 import complain_system.project.branch.model.UniBranch;
 import complain_system.project.branch.repository.UniBranchRepository;
 import complain_system.project.role.model.Role;

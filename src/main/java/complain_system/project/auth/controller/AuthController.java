@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import complain_system.project.dto.AuthResponse;
-import complain_system.project.dto.RegisterRequest;
-import complain_system.project.dto.LoginRequest;
-import complain_system.project.dto.LogoutResponse;
-import complain_system.project.dto.RoleResponse;
+import complain_system.project.auth.dto.AuthResponse;
+import complain_system.project.auth.dto.RegisterRequest;
+import complain_system.project.auth.dto.LoginRequest;
+import complain_system.project.auth.dto.LogoutResponse;
+import complain_system.project.role.dto.RoleResponse;
 import complain_system.project.auth.service.AuthService;
 import jakarta.validation.Valid;
 

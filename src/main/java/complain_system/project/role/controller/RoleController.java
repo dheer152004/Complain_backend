@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import complain_system.project.dto.RoleRequest;
-import complain_system.project.dto.RoleResponse;
+import complain_system.project.role.dto.RoleRequest;
+import complain_system.project.role.dto.RoleResponse;
 import complain_system.project.auth.service.AuthService;
 import jakarta.validation.Valid;
 

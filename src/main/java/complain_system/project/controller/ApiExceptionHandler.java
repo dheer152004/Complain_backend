@@ -6,7 +6,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import complain_system.project.dto.ErrorResponse;
+import complain_system.project.common.dto.ErrorResponse;
 
 @RestControllerAdvice
 public class ApiExceptionHandler {

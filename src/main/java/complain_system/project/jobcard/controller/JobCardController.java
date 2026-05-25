@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import complain_system.project.dto.JobCardRequest;
-import complain_system.project.dto.JobCardResponse;
+import complain_system.project.jobcard.dto.JobCardRequest;
+import complain_system.project.jobcard.dto.JobCardResponse;
 import complain_system.project.jobcard.model.JobStatus;
 import complain_system.project.jobcard.service.JobCardService;
 import jakarta.validation.Valid;

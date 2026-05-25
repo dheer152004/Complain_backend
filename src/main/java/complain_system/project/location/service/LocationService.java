@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import complain_system.project.dto.LocationRequest;
-import complain_system.project.dto.LocationResponse;
+import complain_system.project.location.dto.LocationRequest;
+import complain_system.project.location.dto.LocationResponse;
 import complain_system.project.location.model.Location;
 import complain_system.project.location.repository.LocationRepository;
 

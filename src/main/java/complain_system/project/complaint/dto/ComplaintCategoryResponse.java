@@ -1,4 +1,4 @@
-package complain_system.project.dto;
+package complain_system.project.complaint.dto;
 
 public class ComplaintCategoryResponse {
 

@@ -1,8 +1,6 @@
-package complain_system.project.dto;
+package complain_system.project.jobcard.dto;
 
 import java.time.LocalDateTime;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 import complain_system.project.jobcard.model.JobStatus;
 

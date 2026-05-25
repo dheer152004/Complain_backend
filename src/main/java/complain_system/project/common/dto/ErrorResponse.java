@@ -1,13 +1,13 @@
-package complain_system.project.dto;
+package complain_system.project.common.dto;
 
-public class LogoutResponse {
+public class ErrorResponse {
 
     private String message;
 
-    public LogoutResponse() {
+    public ErrorResponse() {
     }
 
-    public LogoutResponse(String message) {
+    public ErrorResponse(String message) {
         this.message = message;
     }
 

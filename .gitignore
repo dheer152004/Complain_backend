@@ -34,3 +34,5 @@ build/
 frontend
 *.md
 !read.md
+.env
+.env

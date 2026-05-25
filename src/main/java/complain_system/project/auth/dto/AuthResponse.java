@@ -1,4 +1,4 @@
-package complain_system.project.dto;
+package complain_system.project.auth.dto;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

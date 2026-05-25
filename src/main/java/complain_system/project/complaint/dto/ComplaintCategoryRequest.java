@@ -1,4 +1,4 @@
-package complain_system.project.dto;
+package complain_system.project.complaint.dto;
 
 import jakarta.validation.constraints.NotBlank;
 

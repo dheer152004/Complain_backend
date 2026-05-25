@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import complain_system.project.dto.JobCardRequest;
-import complain_system.project.dto.JobCardResponse;
+import complain_system.project.jobcard.dto.JobCardRequest;
+import complain_system.project.jobcard.dto.JobCardResponse;
 import complain_system.project.complaint.model.Complaint;
 import complain_system.project.jobcard.model.JobCard;
 import complain_system.project.jobcard.model.JobStatus;

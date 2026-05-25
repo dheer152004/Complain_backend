@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import complain_system.project.dto.ComplaintCategoryRequest;
-import complain_system.project.dto.ComplaintCategoryResponse;
+import complain_system.project.complaint.dto.ComplaintCategoryRequest;
+import complain_system.project.complaint.dto.ComplaintCategoryResponse;
 import complain_system.project.complaint.service.ComplaintCategoryService;
 import jakarta.validation.Valid;
 

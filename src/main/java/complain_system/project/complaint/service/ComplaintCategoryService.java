@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import complain_system.project.dto.ComplaintCategoryRequest;
-import complain_system.project.dto.ComplaintCategoryResponse;
+import complain_system.project.complaint.dto.ComplaintCategoryRequest;
+import complain_system.project.complaint.dto.ComplaintCategoryResponse;
 import complain_system.project.complaint.model.ComplaintCategory;
 import complain_system.project.complaint.repository.ComplaintCategoryRepository;
 

@@ -1,4 +1,4 @@
-package complain_system.project.dto;
+package complain_system.project.jobcard.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,9 +11,9 @@ public class JobCardRequest {
     @NotBlank
     private String assignedToName;
 
-    private Long locationId; // optional override
+    private Long locationId;
 
-    private String description; // optional additional description
+    private String description;
 
     public Long getComplaintId() {
         return complaintId;

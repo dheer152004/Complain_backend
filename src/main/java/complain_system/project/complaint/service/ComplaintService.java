@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
-import complain_system.project.dto.ComplaintRequest;
-import complain_system.project.dto.ComplaintResponse;
+import complain_system.project.complaint.dto.ComplaintRequest;
+import complain_system.project.complaint.dto.ComplaintResponse;
 import complain_system.project.complaint.model.Complaint;
 import complain_system.project.complaint.model.ComplaintCategory;
 import complain_system.project.location.model.Location;

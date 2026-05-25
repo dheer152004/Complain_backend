@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import complain_system.project.dto.LocationRequest;
-import complain_system.project.dto.LocationResponse;
+import complain_system.project.location.dto.LocationRequest;
+import complain_system.project.location.dto.LocationResponse;
 import complain_system.project.location.service.LocationService;
 import jakarta.validation.Valid;
 
