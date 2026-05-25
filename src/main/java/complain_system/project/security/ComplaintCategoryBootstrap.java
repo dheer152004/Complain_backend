@@ -3,8 +3,8 @@ package complain_system.project.security;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import complain_system.project.model.ComplaintCategory;
-import complain_system.project.repository.ComplaintCategoryRepository;
+import complain_system.project.complaint.model.ComplaintCategory;
+import complain_system.project.complaint.repository.ComplaintCategoryRepository;
 
 @Component
 public class ComplaintCategoryBootstrap implements CommandLineRunner {

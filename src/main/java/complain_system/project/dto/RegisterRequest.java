@@ -5,6 +5,7 @@ import java.util.Set;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class RegisterRequest {
 
@@ -20,6 +21,9 @@ public class RegisterRequest {
 
     @NotBlank
     private String password;
+
+    @NotNull
+    private Long branchId;
 
     private Set<String> roles = new LinkedHashSet<>();
 
@@ -53,6 +57,14 @@ public class RegisterRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Long getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(Long branchId) {
+        this.branchId = branchId;
     }
 
     public Set<String> getRoles() {

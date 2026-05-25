@@ -12,9 +12,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import complain_system.project.model.Role;
-import complain_system.project.model.User;
-import complain_system.project.repository.UserRepository;
+import complain_system.project.role.model.Role;
+import complain_system.project.user.model.User;
+import complain_system.project.user.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

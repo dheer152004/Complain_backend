@@ -1,6 +1,6 @@
 package complain_system.project.dto;
 
-import complain_system.project.model.ComplaintPriority;
+import complain_system.project.complaint.model.ComplaintPriority;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

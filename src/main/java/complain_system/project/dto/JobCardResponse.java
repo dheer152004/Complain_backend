@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import complain_system.project.model.JobStatus;
+import complain_system.project.jobcard.model.JobStatus;
 
 public class JobCardResponse {
 
