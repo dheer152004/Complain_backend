@@ -3,6 +3,7 @@ package complain_system.project.location.dto;
 public class LocationResponse {
 
     private Long locationId;
+    private Long branchId;
     private String name;
     private String floor;
     private String roomNo;
@@ -10,8 +11,9 @@ public class LocationResponse {
     public LocationResponse() {
     }
 
-    public LocationResponse(Long locationId, String name, String floor, String roomNo) {
+    public LocationResponse(Long locationId, Long branchId, String name, String floor, String roomNo) {
         this.locationId = locationId;
+        this.branchId = branchId;
         this.name = name;
         this.floor = floor;
         this.roomNo = roomNo;
@@ -23,6 +25,14 @@ public class LocationResponse {
 
     public void setLocationId(Long locationId) {
         this.locationId = locationId;
+    }
+
+    public Long getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(Long branchId) {
+        this.branchId = branchId;
     }
 
     public String getName() {

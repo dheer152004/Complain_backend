@@ -8,7 +8,11 @@ import complain_system.project.location.model.Location;
 
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
-    Optional<Location> findByNameAndFloorAndRoomNo(String name, String floor, String roomNo);
+    Optional<Location> findByBranch_BranchIdAndLocationId(Long branchId, Long locationId);
 
-    boolean existsByNameAndFloorAndRoomNo(String name, String floor, String roomNo);
+    Optional<Location> findByBranch_BranchIdAndName(Long branchId, String name);
+
+    boolean existsByBranch_BranchIdAndName(Long branchId, String name);
+
+    java.util.List<Location> findAllByBranch_BranchId(Long branchId);
 }

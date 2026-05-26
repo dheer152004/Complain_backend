@@ -4,6 +4,9 @@ import jakarta.validation.constraints.NotBlank;
 
 public class LocationRequest {
 
+    @jakarta.validation.constraints.NotNull
+    private Long branchId;
+
     @NotBlank
     private String name;
 
@@ -12,6 +15,14 @@ public class LocationRequest {
 
     @NotBlank
     private String roomNo;
+
+    public Long getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(Long branchId) {
+        this.branchId = branchId;
+    }
 
     public String getName() {
         return name;

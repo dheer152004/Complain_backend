@@ -18,6 +18,8 @@ import complain_system.project.role.dto.RoleRequest;
 import complain_system.project.role.dto.RoleResponse;
 import complain_system.project.branch.model.UniBranch;
 import complain_system.project.branch.repository.UniBranchRepository;
+import complain_system.project.branch.dto.AdminDirectorRequest;
+import complain_system.project.branch.dto.AdminDirectorResponse;
 import complain_system.project.role.model.Role;
 import complain_system.project.user.model.User;
 import complain_system.project.user.model.UserRole;
@@ -104,6 +106,63 @@ public class AuthService {
         return roleRepository.findAll().stream()
                 .map(role -> new RoleResponse(role.getId(), role.getName(), role.getDescription()))
                 .collect(Collectors.toCollection(LinkedHashSet::new));
+    }
+
+    public java.util.List<complain_system.project.user.dto.UserResponse> getAllUsers() {
+        return userRepository.findAll().stream().map(u -> {
+            Long branchId = u.getBranch() == null ? null : u.getBranch().getBranchId();
+            java.util.Set<String> roleNames = u.getRoles() == null ? java.util.Set.of()
+                    : u.getRoles().stream().map(Role::getName).collect(Collectors.toCollection(LinkedHashSet::new));
+            return new complain_system.project.user.dto.UserResponse(u.getId(), u.getName(), u.getEmail(), u.getPhone(), branchId, roleNames);
+        }).collect(Collectors.toList());
+    }
+
+    public java.util.List<complain_system.project.user.dto.UserResponse> getAdminDirectors() {
+        return userRepository.findAll().stream()
+                .filter(u -> u.getRoles() != null && u.getRoles().stream().anyMatch(r -> "ADMIN_DIRECTOR".equals(r.getName())))
+                .map(u -> {
+                    Long branchId = u.getBranch() == null ? null : u.getBranch().getBranchId();
+                    java.util.Set<String> roleNames = u.getRoles() == null ? java.util.Set.of()
+                            : u.getRoles().stream().map(Role::getName).collect(Collectors.toCollection(LinkedHashSet::new));
+                    return new complain_system.project.user.dto.UserResponse(u.getId(), u.getName(), u.getEmail(), u.getPhone(), branchId, roleNames);
+                }).collect(Collectors.toList());
+    }
+
+    public AdminDirectorResponse createAdminDirector(Long branchId, AdminDirectorRequest request) {
+        if (userRepository.existsByEmail(request.getEmail().trim().toLowerCase(Locale.ROOT))) {
+            throw new IllegalArgumentException("Email already registered");
+        }
+
+        UniBranch branch = uniBranchRepository.findById(branchId)
+                .orElseThrow(() -> new IllegalArgumentException("Branch not found"));
+
+        if (branch.getAdminDirector() != null) {
+            throw new IllegalArgumentException("Admin director already assigned for this branch");
+        }
+
+        Role adminRole = roleRepository.findByName("ADMIN_DIRECTOR")
+                .orElseGet(() -> roleRepository.save(new Role("ADMIN_DIRECTOR", "Branch administrator")));
+
+        User admin = new User();
+        admin.setName(request.getName());
+        String normalizedEmail = request.getEmail().trim().toLowerCase(Locale.ROOT);
+        admin.setEmail(normalizedEmail);
+        admin.setPhone(request.getPhone());
+        admin.setPassword(passwordEncoder.encode(request.getPassword()));
+        admin.setBranch(branch);
+
+        Set<Role> roles = new LinkedHashSet<>();
+        roles.add(adminRole);
+        admin.setRoles(roles);
+        admin.setRole(UserRole.ADMIN_DIRECTOR);
+
+        User saved = userRepository.save(admin);
+
+        branch.setAdminDirector(saved);
+        uniBranchRepository.save(branch);
+
+        return new AdminDirectorResponse(saved.getId(), saved.getName(), saved.getEmail(), saved.getPhone(),
+                branch.getBranchId(), saved.getRoles().stream().map(Role::getName).collect(Collectors.toCollection(LinkedHashSet::new)));
     }
 
     private Set<Role> resolveStudentRoles(Set<String> requestedRoles) {

@@ -37,10 +37,14 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.GET, "/", "/error").permitAll()
                     .requestMatchers("/api/auth/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/roles").permitAll()
-                    .requestMatchers(HttpMethod.GET, "/api/locations").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/api/branches").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/api/branches/*/locations", "/api/branches/*/locations/*", "/api/branches/*/locations/by-name").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/api/locations", "/api/locations/*", "/api/locations/by-name").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/complaint-categories", "/api/complaint-categories/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/auth/roles").authenticated()
                     .requestMatchers(HttpMethod.POST, "/api/roles/**").hasRole("ADMIN_DIRECTOR")
+                    .requestMatchers(HttpMethod.POST, "/api/branches").hasRole("SUPER_ADMIN")
+                    .requestMatchers(HttpMethod.POST, "/api/users/admin-directors").hasRole("SUPER_ADMIN")
                     .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
